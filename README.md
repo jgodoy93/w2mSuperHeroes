@@ -22,7 +22,7 @@ docker run -p 8000:8080 w2mapi
 ```
 
 ## Run con Maven
-El proyecto utiliza la version de Java 11.
+El proyecto utiliza la versión de Java 17.
 
 Ubicarse en la carpeta raiz del proyecto y ejecutar el siguiente comando desde la terminal:
 
@@ -37,3 +37,5 @@ La Api se encuentra documentada con Swagger, para ingresar dirigirse a [http://l
 ## Observaciones.
 
 La informacion del endpoint GET /superheroes, dispone del uso de cache y con una anotación que muestra por consola el tiempo de repuesta en milisegundos.
+
+El proyecto ha sido refactorizado y subida su versión de spring-boot.

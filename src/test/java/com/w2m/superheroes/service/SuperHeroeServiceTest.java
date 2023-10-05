@@ -47,7 +47,7 @@ class SuperHeroeServiceTest {
 	@Mock
 	private SuperHeroeConverter superHeroeConverter;
 
-	@Before
+	@Before()
 	public void initMocks() {
 		MockitoAnnotations.initMocks(this);
 	}

@@ -1,0 +1,4 @@
+com/w2m/superheroes/model/SuperHeroeEntityTest.class
+com/w2m/superheroes/controller/SuperHeroesControllerImplTests.class
+com/w2m/superheroes/service/SuperHeroeServiceTest.class
+com/w2m/superheroes/utils/TestUtils.class

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.19">
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/model/SuperHeroe.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/model/SuperHeroes.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/SuperHeroesApplication.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/converter/SuperHeroeConverter.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/repository/SuperHeroeRepository.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/service/SuperHeroeService.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/service/impl/SuperHeroeServiceImpl.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/errorhandler/RestExceptionHandler.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/errorhandler/APIError.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/entity/SuperHeroeEntity.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/config/SecurityConfiguration.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/config/CachingConfig.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/utils/ResponseSpeedAspect.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/utils/ResponseSpeed.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/controller/SuperHeroesController.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/controller/impl/SuperHeroesControllerImpl.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/java/com/w2m/superheroes/model/SuperHeroeEntityTest.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/java/com/w2m/superheroes/service/SuperHeroeServiceTest.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/java/com/w2m/superheroes/utils/TestUtils.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/java/com/w2m/superheroes/controller/SuperHeroesControllerImplTests.java">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/resources/application.properties">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/resources/application-local.properties">
+</file>
+<file name="/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/resources/application-test.properties">
+</file>
+</checkstyle>
