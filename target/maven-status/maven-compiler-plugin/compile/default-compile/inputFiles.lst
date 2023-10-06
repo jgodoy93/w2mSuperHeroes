@@ -1,0 +1,17 @@
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/service/SuperHeroeService.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/config/CachingConfig.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/model/SuperHeroes.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/config/SecurityConfiguration.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/utils/ResponseSpeed.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/SuperHeroesApplication.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/entity/SuperHeroeEntity.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/utils/ResponseSpeedAspect.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/controller/impl/SuperHeroesControllerImpl.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/converter/SuperHeroeConverter.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/service/impl/SuperHeroeServiceImpl.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/controller/SuperHeroesController.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/model/SuperHeroe.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/repository/SuperHeroeRepository.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/errorhandler/RestExceptionHandler.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/model/CreateSuperHeroe.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/errorhandler/APIError.java

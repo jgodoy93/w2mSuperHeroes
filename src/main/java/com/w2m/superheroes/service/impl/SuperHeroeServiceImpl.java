@@ -1,5 +1,6 @@
 package com.w2m.superheroes.service.impl;
 
+import com.w2m.superheroes.model.CreateSuperHeroe;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -26,11 +27,11 @@ public class SuperHeroeServiceImpl implements SuperHeroeService {
 
 	@Override
 	@CacheEvict(value = "superheroes", allEntries = true)
-	public SuperHeroe createSuperHeroe(SuperHeroe superHeroe) {
+	public SuperHeroe createSuperHeroe(CreateSuperHeroe createSuperHeroe) {
 		log.info("::: Creating super Heroe :::");
-		superHeroeRepository.save(superHeroeConverter.dtoToEntity(superHeroe));
-		log.info("::: {} is created!", superHeroe.getName());
-		return superHeroe;
+		var created = superHeroeRepository.save(superHeroeConverter.dtoToEntity(createSuperHeroe));
+		log.info("::: {} is created!", createSuperHeroe.getName());
+		return superHeroeConverter.entityToDto(created);
 	}
 
 	@Override

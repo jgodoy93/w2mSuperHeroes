@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.w2m.superheroes.entity.SuperHeroeEntity;
+import com.w2m.superheroes.model.CreateSuperHeroe;
 import com.w2m.superheroes.model.SuperHeroe;
 
 public final class TestUtils {
@@ -20,6 +21,14 @@ public final class TestUtils {
 	private static final String COMMENT = "Un heroe de mentira";
 	private static final String COMMENT_2 = "Otro heroe de mentira";
 	private static final String COMMENT_3 = "El verdadero heroe";
+
+	public static CreateSuperHeroe buildCreateSuperHeroe() {
+		var superHeroe = new CreateSuperHeroe();
+		superHeroe.setName(NAME);
+		superHeroe.setComment(COMMENT);
+		return superHeroe;
+	}
+
 
 	public static SuperHeroe buildSuperHeroe() {
 		var superHeroe = new SuperHeroe();
