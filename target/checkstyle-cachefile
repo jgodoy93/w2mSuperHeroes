@@ -1,11 +1,11 @@
-#Fri Oct 06 08:53:21 ART 2023
+#Fri Oct 06 15:57:26 ART 2023
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/utils/ResponseSpeed.java=1696589765693
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/SuperHeroesApplication.java=1696589765693
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/utils/ResponseSpeedAspect.java=1696589765693
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/resources/application-test.properties=1696528417314
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/resources/application-local.properties=1696591110518
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/java/com/w2m/superheroes/model/SuperHeroeEntityTest.java=1696589765693
-/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/repository/SuperHeroeRepository.java=1696589765693
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/repository/SuperHeroeRepository.java=1696616197933
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/errorhandler/RestExceptionHandler.java=1696589765693
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/model/CreateSuperHeroe.java=1696590119136
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/java/com/w2m/superheroes/utils/TestUtils.java=1696592480806
@@ -19,8 +19,8 @@ configuration*?=FFB16FDFC77644DE0063AA47F46586C1F52581AF
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/entity/SuperHeroeEntity.java=1696592044802
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/model/SuperHeroe.java=1696589765693
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/converter/SuperHeroeConverter.java=1696590634964
-/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/service/impl/SuperHeroeServiceImpl.java=1696590361948
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/service/impl/SuperHeroeServiceImpl.java=1696616408074
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/controller/SuperHeroesController.java=1696590119140
-/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/java/com/w2m/superheroes/service/SuperHeroeServiceTest.java=1696593188770
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/test/java/com/w2m/superheroes/service/SuperHeroeServiceTest.java=1696618635694
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/resources/application.properties=1696528417310
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/errorhandler/APIError.java=1696589765693

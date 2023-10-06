@@ -1,16 +1,12 @@
 package com.w2m.superheroes.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.verify;
-
-import java.util.Optional;
-
+import com.w2m.superheroes.converter.SuperHeroeConverter;
+import com.w2m.superheroes.entity.SuperHeroeEntity;
 import com.w2m.superheroes.model.CreateSuperHeroe;
+import com.w2m.superheroes.model.SuperHeroe;
+import com.w2m.superheroes.repository.SuperHeroeRepository;
+import com.w2m.superheroes.service.impl.SuperHeroeServiceImpl;
+import com.w2m.superheroes.utils.TestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,128 +20,158 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.w2m.superheroes.converter.SuperHeroeConverter;
-import com.w2m.superheroes.entity.SuperHeroeEntity;
-import com.w2m.superheroes.model.SuperHeroe;
-import com.w2m.superheroes.repository.SuperHeroeRepository;
-import com.w2m.superheroes.service.impl.SuperHeroeServiceImpl;
-import com.w2m.superheroes.utils.TestUtils;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.doThrow;
 
 @ExtendWith(MockitoExtension.class)
 class SuperHeroeServiceTest {
 
-	private static final String SEARCH = "Test";
-	public SuperHeroe superHeroeDTO;
-	public CreateSuperHeroe createSuperHeroeDTO;
-	public SuperHeroeEntity superHeroeEntity;
-	public SuperHeroeEntity superHeroeEntity2;
+    private static final String SEARCH = "Test";
+    public SuperHeroe superHeroeDTO;
+    public CreateSuperHeroe createSuperHeroeDTO;
+    public SuperHeroeEntity superHeroeEntity;
+    public SuperHeroeEntity superHeroeEntity2;
 
-	@InjectMocks
-	private SuperHeroeServiceImpl superHeroeServiceImpl;
+    @InjectMocks
+    private SuperHeroeServiceImpl superHeroeServiceImpl;
 
-	@Mock
-	private SuperHeroeRepository superHeroeRepository;
+    @Mock
+    private SuperHeroeRepository superHeroeRepository;
 
-	@Mock
-	private SuperHeroeConverter superHeroeConverter;
+    @Mock
+    private SuperHeroeConverter superHeroeConverter;
 
-	@Before()
-	public void initMocks() {
-		MockitoAnnotations.initMocks(this);
-	}
-	
-	@BeforeEach
-	void setup() {
-		createSuperHeroeDTO = TestUtils.buildCreateSuperHeroe();
-		superHeroeDTO = TestUtils.buildSuperHeroe();
-		superHeroeEntity = TestUtils.buildSuperHeroeEntity();
-		superHeroeEntity2 = TestUtils.buildSuperHeroeEntity2();		
-	}
+    @Before()
+    public void initMocks() {
+        MockitoAnnotations.initMocks(this);
+    }
 
-	@DisplayName("Test for updateSuperHeroe")
-	@Test
-	void updateSuperHeroeTest() {
+    @BeforeEach
+    void setup() {
+        createSuperHeroeDTO = TestUtils.buildCreateSuperHeroe();
+        superHeroeDTO = TestUtils.buildSuperHeroe();
+        superHeroeEntity = TestUtils.buildSuperHeroeEntity();
+        superHeroeEntity2 = TestUtils.buildSuperHeroeEntity2();
+    }
 
-		var superHeroeDTOAlt = TestUtils.buildSuperHeroe2();
+    @DisplayName("Test for updateSuperHeroe")
+    @Test
+    void updateSuperHeroeTest() {
 
-		doReturn(Optional.of(superHeroeEntity2)).when(superHeroeRepository).findById(2L);
-		doReturn(superHeroeEntity2).when(superHeroeRepository).save(superHeroeEntity2);
+        SuperHeroe superHeroeDTOAlt = TestUtils.buildSuperHeroe2();
 
-		var result = superHeroeServiceImpl.updateSuperHeroe(superHeroeDTOAlt);
+        doReturn(Optional.of(superHeroeEntity2)).when(superHeroeRepository).findById(2L);
+        doReturn(superHeroeEntity2).when(superHeroeRepository).save(superHeroeEntity2);
 
-		assertNotNull(result);
-		assertEquals(result.getName(), superHeroeDTOAlt.getName());
-		assertEquals(result.getComment(), superHeroeDTOAlt.getComment());
+        SuperHeroe result = superHeroeServiceImpl.updateSuperHeroe(superHeroeDTOAlt);
 
-	}
+        assertNotNull(result);
+        assertEquals(result.getName(), superHeroeDTOAlt.getName());
+        assertEquals(result.getComment(), superHeroeDTOAlt.getComment());
 
-	@DisplayName("Test for get SuperHeroe")
-	@Test
-	void getSuperHeroeTest() {
+    }
 
-		doReturn(Optional.of(superHeroeEntity)).when(superHeroeRepository).findById(1L);
-		doReturn(superHeroeDTO).when(superHeroeConverter).entityToDto(superHeroeEntity);
+    @DisplayName("Test for get SuperHeroe")
+    @Test
+    void getSuperHeroeTest() {
 
-		var result = superHeroeServiceImpl.getSuperHeroeById("1");
+        doReturn(Optional.of(superHeroeEntity)).when(superHeroeRepository).findById(1L);
+        doReturn(superHeroeDTO).when(superHeroeConverter).entityToDto(superHeroeEntity);
 
-		assertEquals("1", result.getId());
-		assertEquals("TestSuperHeroe", result.getName());
-		assertEquals("Un heroe de mentira", result.getComment());
+        SuperHeroe result = superHeroeServiceImpl.getSuperHeroeById("1");
 
-	}
+        assertEquals("1", result.getId());
+        assertEquals("TestSuperHeroe", result.getName());
+        assertEquals("Un heroe de mentira", result.getComment());
 
-	@DisplayName("Test for findAllSuperHeroesbySearchCriteria")
-	@Test
-	void findAllSuperHeroesByCriteria() {
-		doReturn(Optional.of(TestUtils.buildListSuperHeroes())).when(superHeroeRepository).findByNameContaining(SEARCH);
-		doReturn(TestUtils.buildListSuperHeroeDTO()).when(superHeroeConverter)
-				.entitiesToDtos(TestUtils.buildListSuperHeroes());
+    }
 
-		var result = superHeroeServiceImpl.findAllSuperHeroesBySearchCriteria(SEARCH);
+    @DisplayName("Test for findAllSuperHeroesbySearchCriteria")
+    @Test
+    void findAllSuperHeroesByCriteria() {
+        doReturn(Optional.of(TestUtils.buildListSuperHeroes())).when(superHeroeRepository).findByNameContaining(SEARCH);
+        doReturn(TestUtils.buildListSuperHeroeDTO()).when(superHeroeConverter)
+                .entitiesToDtos(TestUtils.buildListSuperHeroes());
 
-		assertNotNull(result);
+        var result = superHeroeServiceImpl.findAllSuperHeroesBySearchCriteria(SEARCH);
 
-		result.getData().stream().forEach((d) -> {
-			assertTrue(StringUtils.contains(d.getName(), SEARCH));
-		});
+        assertNotNull(result);
 
-	}
+        result.getData().stream().forEach((d) -> {
+            assertTrue(StringUtils.contains(d.getName(), SEARCH));
+        });
 
-	@DisplayName("Test for delete SuperHeroe")
-	@Test
-	void deleteSuperHeroe() {
+    }
 
-		doReturn(Optional.of(superHeroeEntity2)).when(superHeroeRepository).findById(2L);
-		superHeroeServiceImpl.deleteSuperHeroe("2");
+    @DisplayName("Test for delete SuperHeroe")
+    @Test
+    void deleteSuperHeroe() {
 
-		verify(superHeroeRepository).delete(superHeroeEntity2);
+        doReturn(Optional.of(superHeroeEntity2)).when(superHeroeRepository).findById(2L);
+        superHeroeServiceImpl.deleteSuperHeroe("2");
 
-	}
+        verify(superHeroeRepository).delete(superHeroeEntity2);
 
-	@DisplayName("Test for createSuperHeroe")
-	@Test
-	void createSuperHeroeTest() {
+    }
 
-		doReturn(superHeroeEntity).when(superHeroeConverter).dtoToEntity(createSuperHeroeDTO);
-		doReturn(superHeroeEntity).when(superHeroeRepository).save(superHeroeEntity);
+    @DisplayName("Test for createSuperHeroe")
+    @Test
+    void createSuperHeroeTest() {
+        doReturn(Optional.empty()).when(superHeroeRepository).findByName("TestSuperHeroe");
+        doReturn(superHeroeEntity).when(superHeroeConverter).dtoToEntity(createSuperHeroeDTO);
+        doReturn(superHeroeEntity).when(superHeroeRepository).save(any(SuperHeroeEntity.class));
+        doReturn(superHeroeDTO).when(superHeroeConverter).entityToDto(superHeroeEntity);
 
-		var result = superHeroeServiceImpl.createSuperHeroe(createSuperHeroeDTO);
+        SuperHeroe result = superHeroeServiceImpl.createSuperHeroe(createSuperHeroeDTO);
+        assertEquals("TestSuperHeroe", result.getName());
+        assertEquals("Un heroe de mentira", result.getComment());
 
-		assertEquals("TestSuperHeroe", superHeroeEntity.getName());
-		assertEquals("Un heroe de mentira", superHeroeEntity.getComment());
+        verify(superHeroeRepository, times(1)).findByName("TestSuperHeroe");
+        verify(superHeroeConverter, times(1)).dtoToEntity(createSuperHeroeDTO);
+        verify(superHeroeRepository, times(1)).save(any(SuperHeroeEntity.class));
 
-	}
+        assertNotNull(result);
+    }
 
-	@DisplayName("Test for exception")
-	@Test
-	void exceptionTest() {
+    @DisplayName("Test for createSuperHeroe when exists")
+    @Test
+    void createSuperHeroeTestWhenExists() {
 
-		doThrow(new ResponseStatusException(HttpStatus.NOT_FOUND, "SuperHeroe not found.")).when(superHeroeRepository)
-				.findById(1L);
-		assertThrows(ResponseStatusException.class, () -> {
-			superHeroeServiceImpl.getSuperHeroeById("1");
-		});
+        doReturn(Optional.of(superHeroeEntity)).when(superHeroeRepository).findByName("TestSuperHeroe");
 
-	}
+        assertThrows(ResponseStatusException.class, () -> {
+            superHeroeServiceImpl.createSuperHeroe(createSuperHeroeDTO);
+        });
+
+        verifyZeroInteractions(superHeroeConverter);
+        verifyZeroInteractions(superHeroeRepository);
+    }
+
+    @DisplayName("Test for exception")
+    @Test
+    void exceptionTest() {
+
+        doThrow(new ResponseStatusException(HttpStatus.NOT_FOUND, "SuperHeroe not found.")).when(superHeroeRepository)
+                .findById(1L);
+        assertThrows(ResponseStatusException.class, () -> {
+            superHeroeServiceImpl.getSuperHeroeById("1");
+        });
+
+    }
 
 }
+
+
+
+
+

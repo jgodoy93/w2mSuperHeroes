@@ -13,6 +13,8 @@ public interface SuperHeroeRepository extends JpaRepository<SuperHeroeEntity, Lo
 
 	Optional<SuperHeroeEntity> findById(Long id);
 
+	Optional<SuperHeroeEntity> findByName(String name);
+
 	Optional<List<SuperHeroeEntity>> findByNameContaining(String searchCriteria);
 
 }
