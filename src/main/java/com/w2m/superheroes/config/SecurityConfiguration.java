@@ -20,7 +20,7 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, MvcRequestMatcher.Builder mvc) throws Exception {
         http.authorizeHttpRequests(
-                        (authorize) -> authorize.requestMatchers(mvc.pattern("/swagger-ui/**")).permitAll().anyRequest()
+                        (authorize) -> authorize.requestMatchers(mvc.pattern("/swagger-ui/**"),mvc.pattern("/h2-console/**")).permitAll().anyRequest()
                                 .authenticated()).jee((jee) -> jee.mappableRoles("USER", "ADMIN")).exceptionHandling()
                 .accessDeniedPage("/403").and().formLogin().and().logout().and().csrf().disable();
 

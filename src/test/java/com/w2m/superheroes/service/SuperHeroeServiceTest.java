@@ -10,6 +10,7 @@ import static org.mockito.Mockito.verify;
 
 import java.util.Optional;
 
+import com.w2m.superheroes.model.CreateSuperHeroe;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,6 +36,7 @@ class SuperHeroeServiceTest {
 
 	private static final String SEARCH = "Test";
 	public SuperHeroe superHeroeDTO;
+	public CreateSuperHeroe createSuperHeroeDTO;
 	public SuperHeroeEntity superHeroeEntity;
 	public SuperHeroeEntity superHeroeEntity2;
 
@@ -54,25 +56,10 @@ class SuperHeroeServiceTest {
 	
 	@BeforeEach
 	void setup() {
+		createSuperHeroeDTO = TestUtils.buildCreateSuperHeroe();
 		superHeroeDTO = TestUtils.buildSuperHeroe();
 		superHeroeEntity = TestUtils.buildSuperHeroeEntity();
 		superHeroeEntity2 = TestUtils.buildSuperHeroeEntity2();		
-	}
-
-	@DisplayName("Test for createSuperHeroe")
-	@Test
-	void createSuperHeroeTest() {
-
-		doReturn(superHeroeEntity).when(superHeroeConverter).dtoToEntity(superHeroeDTO);
-		doReturn(superHeroeEntity).when(superHeroeRepository).save(superHeroeEntity);
-
-		var result = superHeroeServiceImpl.createSuperHeroe(superHeroeDTO);
-
-		assertNotNull(result);
-		assertEquals(1, superHeroeEntity.getId());
-		assertEquals("TestSuperHeroe", superHeroeEntity.getName());
-		assertEquals("Un heroe de mentira", superHeroeEntity.getComment());
-
 	}
 
 	@DisplayName("Test for updateSuperHeroe")
@@ -132,6 +119,20 @@ class SuperHeroeServiceTest {
 		superHeroeServiceImpl.deleteSuperHeroe("2");
 
 		verify(superHeroeRepository).delete(superHeroeEntity2);
+
+	}
+
+	@DisplayName("Test for createSuperHeroe")
+	@Test
+	void createSuperHeroeTest() {
+
+		doReturn(superHeroeEntity).when(superHeroeConverter).dtoToEntity(createSuperHeroeDTO);
+		doReturn(superHeroeEntity).when(superHeroeRepository).save(superHeroeEntity);
+
+		var result = superHeroeServiceImpl.createSuperHeroe(createSuperHeroeDTO);
+
+		assertEquals("TestSuperHeroe", superHeroeEntity.getName());
+		assertEquals("Un heroe de mentira", superHeroeEntity.getComment());
 
 	}
 

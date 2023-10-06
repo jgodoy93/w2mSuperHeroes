@@ -1,11 +1,12 @@
 package com.w2m.superheroes.service;
 
+import com.w2m.superheroes.model.CreateSuperHeroe;
 import com.w2m.superheroes.model.SuperHeroe;
 import com.w2m.superheroes.model.SuperHeroes;
 
 public interface SuperHeroeService {
 
-	SuperHeroe createSuperHeroe(SuperHeroe superHeroe);
+	SuperHeroe createSuperHeroe(CreateSuperHeroe createSuperHeroe);
 
 	SuperHeroe updateSuperHeroe(SuperHeroe superHeroe);
 

@@ -13,4 +13,5 @@
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/model/SuperHeroe.java
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/repository/SuperHeroeRepository.java
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/errorhandler/RestExceptionHandler.java
+/home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/model/CreateSuperHeroe.java
 /home/jgodoy93/Documents/Development/w2mSuperHeroes/src/main/java/com/w2m/superheroes/errorhandler/APIError.java

@@ -1,6 +1,7 @@
 package com.w2m.superheroes.controller.impl;
 
 import com.w2m.superheroes.controller.SuperHeroesController;
+import com.w2m.superheroes.model.CreateSuperHeroe;
 import com.w2m.superheroes.model.SuperHeroe;
 import com.w2m.superheroes.model.SuperHeroes;
 import com.w2m.superheroes.service.impl.SuperHeroeServiceImpl;
@@ -17,8 +18,8 @@ public class SuperHeroesControllerImpl implements SuperHeroesController {
     private final SuperHeroeServiceImpl superHeroeServiceImpl;
 
     @Override
-    public ResponseEntity<SuperHeroe> createSuperHeroe(SuperHeroe superHeroe) {
-        return new ResponseEntity<SuperHeroe>(superHeroeServiceImpl.createSuperHeroe(superHeroe), HttpStatus.CREATED);
+    public ResponseEntity<SuperHeroe> createSuperHeroe(CreateSuperHeroe createSuperHeroe) {
+        return new ResponseEntity<SuperHeroe>(superHeroeServiceImpl.createSuperHeroe(createSuperHeroe), HttpStatus.CREATED);
     }
 
     @Override

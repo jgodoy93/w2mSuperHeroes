@@ -1,5 +1,6 @@
 package com.w2m.superheroes.controller;
 
+import com.w2m.superheroes.model.CreateSuperHeroe;
 import com.w2m.superheroes.model.SuperHeroe;
 import com.w2m.superheroes.model.SuperHeroes;
 import io.swagger.v3.oas.annotations.Operation;
@@ -18,11 +19,11 @@ public interface SuperHeroesController {
 
     @Operation(operationId = "createSuperHeroe", summary = "Creación de super heroe.", tags = {
             "superheroe" }, responses = { @ApiResponse(responseCode = "201", description = "Created", content = {
-            @Content(mediaType = "application/json", schema = @Schema(implementation = SuperHeroe.class)) }) })
+            @Content(mediaType = "application/json", schema = @Schema(implementation = CreateSuperHeroe.class)) }) })
     @RequestMapping(method = RequestMethod.POST, value = "/superheroe", produces = { "application/json" }, consumes = {
             "application/json" })
     public ResponseEntity<SuperHeroe> createSuperHeroe(
-            @Parameter(name = "SuperHeroe", description = "requets", required = true) @Valid @RequestBody SuperHeroe superHeroe);
+            @Parameter(name = "SuperHeroe", description = "requets", required = true) @Valid @RequestBody CreateSuperHeroe createSuperHeroe);
 
     @Operation(operationId = "deleteSuperHeroe", summary = "Eliminación de superHeroe.", tags = {
             "superheroe" }, responses = { @ApiResponse(responseCode = "200", description = "Ok") })
